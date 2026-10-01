@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waroeng Jajan Gen Z</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mentai: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center space-x-2">
+                    <div
+                        class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-500 to-orange-500 flex items-center justify-center text-white font-bold text-xl shadow-md">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <span
+                        class="text-xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">Waroeng Jajan Gen Z</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium">
+                    <a href="#home" class="text-gray-600 hover:text-amber-600 transition">Beranda</a>
+                    <a href="#menu" class="text-gray-600 hover:text-amber-600 transition">Menu</a>
+                    <a href="#about" class="text-gray-600 hover:text-amber-600 transition">Tentang Kami</a>
+                    <a href="#contact" class="text-gray-600 hover:text-amber-600 transition">Kontak</a>
+                </nav>
+
+                <!-- Right Action (Cart & Mobile Menu Toggle) -->
+                <div class="flex items-center space-x-4">
+                    <!-- Cart Button -->
+                    <button onclick="toggleCart()"
+                        class="relative p-2.5 rounded-full bg-gray-100 hover:bg-amber-100 text-gray-700 hover:text-amber-700 transition">
+                        <i class="fa-solid fa-cart-shopping text-lg"></i>
+                        <span id="cart-badge"
+                            class="absolute -top-1 -right-1 bg-amber-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold hidden">0</span>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn"
+                        class="md:hidden p-2 rounded-lg text-gray-600 hover:text-amber-600 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-4 space-y-2 shadow-lg">
+            <a href="#home"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-amber-50 hover:text-amber-600">Beranda</a>
+            <a href="#menu"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-amber-50 hover:text-amber-600">Menu</a>
+            <a href="#about"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-amber-50 hover:text-amber-600">Tentang
+                Kami</a>
+            <a href="#contact"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-amber-50 hover:text-amber-600">Kontak</a>
+        </div>
+    </header>
+
+    <!-- HOME / HERO SECTION -->
+    <section id="home"
+        class="relative bg-gradient-to-b from-amber-50 via-white to-white py-20 lg:py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <span
+                        class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-sm font-semibold bg-amber-100 text-amber-800">
+                        <i class="fa-solid fa-fire"></i> Best Seller Siomay Ayam Source Cream
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+                        Sensasi Lumer <span
+                            class="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">Lembut
+                            </span> di Setiap Gigitan!
+                    </h1>
+                    <p class="text-lg text-gray-600 max-w-xl mx-auto lg:mx-0">
+                        Berbagai variasi makanan gen z yang lezat dan menggugah selera. Pesan sekarang langsung via WhatsApp!
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#menu"
+                            class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold shadow-lg shadow-amber-500/30 hover:shadow-xl hover:scale-[1.02] transition">
+                            <i class="fa-solid fa-utensils mr-2"></i> Lihat Menu Favorit
+                        </a>
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white border border-gray-300 text-gray-700 font-semibold hover:bg-gray-50 transition">
+                            Hubungi Kami
+                        </a>
+                    </div>
+                </div>
+                <!-- Hero Image Illustration -->
+                <div class="relative flex justify-center">
+                    <div
+                        class="w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-tr from-amber-300 to-orange-400 rounded-full absolute -z-10 blur-2xl opacity-40">
+                    </div>
+                    <div
+                        class="relative bg-white p-4 rounded-3xl shadow-2xl border border-gray-100 max-w-sm w-full transform rotate-2 hover:rotate-0 transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=600&q=80"
+                            alt="Waroeng Jajan Gen Z" class="rounded-2xl w-full h-72 object-cover">
+                        <div class="mt-4 p-4 bg-amber-50 rounded-2xl flex items-center justify-between">
+                            <div>
+                                <h4 class="font-bold text-gray-900">Mentai Special Mix</h4>
+                                <p class="text-sm text-gray-500">Isi 6 Porsi Campur</p>
+                            </div>
+                            <span class="text-amber-700 font-extrabold text-lg">Rp 35.000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU SECTION -->
+    <section id="menu" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-amber-600 font-semibold uppercase tracking-wider text-sm">Pilihan Menu</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-2">Menu Dimsum Mentai Kami</h2>
+                <p class="text-gray-600 mt-3">Pilih varian favoritmu atau kombinasikan dalam satu porsi besar.</p>
+            </div>
+
+            <!-- Menu Grid -->
+            <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Diisi via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=800&q=80"
+                        alt="About Dimsum Mentai" class="rounded-3xl shadow-xl w-full h-[400px] object-cover">
+                    
+                </div>
+                <div class="space-y-6">
+                    <span class="text-amber-600 font-semibold uppercase tracking-wider text-sm">Tentang Kami</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+                        Dedikasi Rasa untuk Pecinta Kuliner Dimsum
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Dimsum Mentai berawal dari kecintaan kami terhadap olahan dimsum rumahan berkualitas restoran.
+                        Kami berkomitmen untuk menyajikan dimsum yang padat daging, lembut di mulut, dipadu dengan saus
+                        mentai racikan rahasia yang gurih, sedikit manis, dan creamy.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="flex items-start space-x-3">
+                            <div class="p-2 bg-amber-100 text-amber-700 rounded-lg"><i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Fresh Daily</h4>
+                                <p class="text-xs text-gray-500">Dibuat setiap hari</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="p-2 bg-amber-100 text-amber-700 rounded-lg"><i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">No Preservatives</h4>
+                                <p class="text-xs text-gray-500">Tanpa pengawet buatan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 bg-gray-50 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-amber-600 font-semibold uppercase tracking-wider text-sm">Kontak Kami</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-2">Hubungi & Lokasi Dapur</h2>
+                <p class="text-gray-600 mt-3">Punya pertanyaan atau ingin memesan langsung untuk acara? Hubungi kami
+                    melalui kontak di bawah ini.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center space-y-4">
+                    <div
+                        class="w-14 h-14 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto text-xl">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900">WhatsApp / Telepon</h3>
+                    <p class="text-gray-600 text-sm">+62 838-4997-1170</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center space-y-4">
+                    <div
+                        class="w-14 h-14 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto text-xl">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900">Lokasi Dapur</h3>
+                    <p class="text-gray-600 text-sm">Jl. Kuliner Lezat No. 88, Sumatra Utara</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center space-y-4">
+                    <div
+                        class="w-14 h-14 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto text-xl">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900">Jam Operasional</h3>
+                    <p class="text-gray-600 text-sm">Senin - Minggu: 10.00 - 21.00 WIB</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="flex justify-center items-center space-x-2">
+                <div class="w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center text-white font-bold">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <span class="text-lg font-bold">Dimsum Mentai</span>
+            </div>
+            <p class="text-gray-400 text-sm">Nikmati kelezatan dimsum mentai premium langsung di rumah Anda.</p>
+            <p class="text-gray-500 text-xs">&copy; 2026 Dimsum Mentai. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- SLIDE-OVER CART DRAWER -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <!-- Backdrop -->
+        <div id="cart-backdrop" onclick="toggleCart()"
+            class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity"></div>
+
+        <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+                <!-- Cart Header -->
+                <div class="p-6 bg-gray-50 border-b border-gray-100 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-cart-shopping text-amber-600"></i>
+                        <h2 class="text-lg font-bold text-gray-900">Keranjang Belanja</h2>
+                    </div>
+                    <button onclick="toggleCart()" class="p-2 text-gray-400 hover:text-gray-600 rounded-full">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Cart Items Body -->
+                <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4 divide-y divide-gray-100">
+                    <!-- Diisi via JavaScript -->
+                </div>
+
+                <!-- Cart Footer / Checkout -->
+                <div class="p-6 bg-gray-50 border-t border-gray-100 space-y-4">
+                    <!-- Customer Form Inputs -->
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-600 mb-1">Nama Pemesan</label>
+                            <input type="text" id="customer-name" placeholder="Masukkan nama Anda"
+                                class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-600 mb-1">Alamat Pengiriman</label>
+                            <textarea id="customer-address" rows="2" placeholder="Masukkan alamat lengkap..."
+                                class="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-amber-500"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center font-bold text-lg pt-2 border-t border-gray-200">
+                        <span>Total:</span>
+                        <span id="cart-total" class="text-amber-600">Rp 0</span>
+                    </div>
+
+                    <button onclick="checkoutWhatsApp()"
+                        class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 text-white font-bold shadow-lg shadow-emerald-500/20 hover:shadow-xl hover:scale-[1.01] transition flex items-center justify-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Pesan via WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Data Menu Dimsum Mentai
+        const menuItems = [
+            {
+                id: 1,
+                name: "Siomay Ayam sour cream (6 pcs)",
+                category: "Ayam",
+                price: 30000,
+                image: "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=500&q=80",
+                description: "Siomay ayam lembut dengan siraman saus putih original torched smoky."
+            },
+            {
+                id: 2,
+                name: "Dumpling Udang Keju (3 pcs)",
+                category: "Udang & Keju",
+                price: 28000,
+                image: "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=500&q=80",
+                description: "Isian udang segar berpadu lelehan keju mozarella di dalam rebusan pangsit."
+            },
+            {
+                id: 3,
+                name: "Pangsit Dumpling Volcano (9 pcs)",
+                category: "creamy",
+                price: 39000,
+                image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=500&q=80",
+                description: "Bagi pecinta creamy! Mentai dengan tambahan minyak dan taburan nori."
+            },
+            {
+                id: 4,
+                name: "Sandwich (1 pcs)",
+                category: "isi",
+                price: 68000,
+                image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=500&q=80",
+                description: "Kombinasi lengkap semua varian rasa dalam satu box spesial."
+            },
+            {
+                id: 5,
+                name: "Sushi (6 pcs)",
+                category: "Spesial",
+                price: 35000,
+                image: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=500&q=80",
+                description: "Balutan lembaran nori rumput laut dengan isian ayam udang dan saus mentai."
+            },
+            {
+                id: 6,
+                name: "Pangsit combo (6 pcs)",
+                category: "Seafood",
+                price: 36000,
+                image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=500&q=80",
+                description: "Pangsit dengan topping surimi dan rempah berlimpah."
+            }
+        ];
+
+        let cart = [];
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Render Menu Grid
+        function renderMenu() {
+            const menuGrid = document.getElementById('menu-grid');
+            menuGrid.innerHTML = menuItems.map(item => `
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 overflow-hidden transition flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden h-48">
+                            <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-amber-700 text-xs font-bold px-2.5 py-1 rounded-full shadow">
+                                ${item.category}
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <h3 class="font-bold text-lg text-gray-900">${item.name}</h3>
+                            <p class="text-gray-500 text-sm line-clamp-2">${item.description}</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex items-center justify-between mt-4">
+                        <span class="text-amber-600 font-extrabold text-lg">Rp ${item.price.toLocaleString('id-ID')}</span>
+                        <button onclick="addToCart(${item.id})" class="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold text-sm rounded-xl shadow-md transition flex items-center space-x-1.5">
+                            <i class="fa-solid fa-plus text-xs"></i>
+                            <span>Pesan</span>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Cart Drawer Toggle
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            drawer.classList.toggle('hidden');
+            renderCartItems();
+        }
+
+        // Add to Cart
+        function addToCart(id) {
+            const product = menuItems.find(item => item.id === id);
+            const existing = cart.find(item => item.id === id);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+            updateCartBadge();
+            renderCartItems();
+            toggleCart(); // Buka otomatis saat barang ditambahkan
+        }
+
+        // Update Qty in Cart
+        function updateQty(id, change) {
+            const item = cart.find(i => i.id === id);
+            if (item) {
+                item.qty += change;
+                if (item.qty <= 0) {
+                    cart = cart.filter(i => i.id !== id);
+                }
+            }
+            updateCartBadge();
+            renderCartItems();
+        }
+
+        // Update Cart Badge Counter
+        function updateCartBadge() {
+            const badge = document.getElementById('cart-badge');
+            const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+            if (totalCount > 0) {
+                badge.innerText = totalCount;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+        }
+
+        // Render Cart Items Inside Drawer
+        function renderCartItems() {
+            const container = document.getElementById('cart-items-container');
+            const totalEl = document.getElementById('cart-total');
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 text-gray-400 space-y-2">
+                        <i class="fa-solid fa-cart-shopping text-4xl"></i>
+                        <p class="text-sm font-medium">Keranjang Anda masih kosong</p>
+                    </div>
+                `;
+                totalEl.innerText = 'Rp 0';
+                return;
+            }
+
+            let total = 0;
+            container.innerHTML = cart.map(item => {
+                const subtotal = item.price * item.qty;
+                total += subtotal;
+                return `
+                    <div class="flex items-center justify-between py-3">
+                        <div class="flex-1 pr-2">
+                            <h4 class="text-sm font-bold text-gray-900">${item.name}</h4>
+                            <p class="text-xs text-amber-600 font-semibold">Rp ${item.price.toLocaleString('id-ID')} x ${item.qty}</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button onclick="updateQty(${item.id}, -1)" class="w-7 h-7 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg flex items-center justify-center font-bold text-xs">-</button>
+                            <span class="text-sm font-semibold w-5 text-center">${item.qty}</span>
+                            <button onclick="updateQty(${item.id}, 1)" class="w-7 h-7 bg-amber-500 hover:bg-amber-600 text-white rounded-lg flex items-center justify-center font-bold text-xs">+</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            totalEl.innerText = `Rp ${total.toLocaleString('id-ID')}`;
+        }
+
+        // Checkout & Send via WhatsApp
+        function checkoutWhatsApp() {
+            if (cart.length === 0) {
+                alert('Keranjang belanja Anda masih kosong!');
+                return;
+            }
+
+            const name = document.getElementById('customer-name').value.trim();
+            const address = document.getElementById('customer-address').value.trim();
+
+            if (!name || !address) {
+                alert('Mohon isi Nama Pemesan dan Alamat Pengiriman terlebih dahulu!');
+                return;
+            }
+
+            let message = `Halo Kak, saya ingin memesan Dimsum Mentai:\n\n`;
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                let sub = item.price * item.qty;
+                total += sub;
+                message += `${index + 1}. ${item.name} (${item.qty}x) - Rp ${sub.toLocaleString('id-ID')}\n`;
+            });
+
+            message += `\n*Total Keseluruhan: Rp ${total.toLocaleString('id-ID')}*`;
+            message += `\n\n*Data Pemesan:*`;
+            message += `\nNama: ${name}`;
+            message += `\nAlamat: ${address}`;
+            message += `\n\nTerima kasih!`;
+
+            // Ganti nomor WhatsApp di bawah ini dengan nomor tujuan toko Anda (format internasional tanpa tanda +, misal 62812...)
+            const waNumber = '6283849971170';
+            const encodedMessage = encodeURIComponent(message);
+            const waURL = `https://wa.me/${waNumber}?text=${encodedMessage}`;
+
+            window.open(waURL, '_blank');
+        }
+
+        // Initialize Page
+        window.addEventListener('DOMContentLoaded', () => {
+            renderMenu();
+        });
+    </script>
+</body>
+
+</html>
